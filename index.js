@@ -1,4 +1,5 @@
 // Import the required modules
+require('dotenv').config();
 const express = require('express');
 const admin = require('firebase-admin');
 const Cipher = require('./cipher');
@@ -6,7 +7,25 @@ const fs = require('fs');
 const { Client, GatewayIntentBits } = require('discord.js');
 const { checkDeposit } = require('./lib/vippy_db.js');
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./vippy-pro-firebase-adminsdk-gwjfa-412a251d28.json'); // Đường dẫn đến tệp khóa dịch vụ của bạn
+//const serviceAccount = require('./vippy-pro-firebase-adminsdk-gwjfa-412a251d28.json'); // Đường dẫn đến tệp khóa dịch vụ của bạn
+
+
+// Tạo đối tượng serviceAccount từ các biến môi trường
+const serviceAccount = {
+  type: process.env.FIREBASE_TYPE,
+  project_id: process.env.FIREBASE_PROJECT_ID,
+  private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+  client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  client_id: process.env.FIREBASE_CLIENT_ID,
+  auth_uri: process.env.FIREBASE_AUTH_URI,
+  token_uri: process.env.FIREBASE_TOKEN_URI,
+  auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
+  client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
+  universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
+  
+};
+
 var contractList = [];
 
 var DELETE_FEE_RATION = 0.05;
@@ -28,7 +47,8 @@ const app = express();
 
 
 // Thay thế 'YOUR_BOT_TOKEN' bằng token của bot của bạn
-const token = '';
+const token = process.env.YOUR_DISCORD_BOT_TOKEN;//'';
+console.log("token = "+token);
 const channelId = '1319475618840182858'; // Thay thế 'YOUR_CHANNEL_ID' bằng ID của kênh
 
 // Tạo client với các intents cần thiết

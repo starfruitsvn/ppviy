@@ -12,6 +12,7 @@
     "axios": "^1.7.7",
     "crypto": "^1.0.1",
     "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
     "express": "^4.20.0",
     "firebase": "^10.13.1",
     "firebase-admin": "^12.4.0",
