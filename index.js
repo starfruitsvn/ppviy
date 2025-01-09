@@ -28,7 +28,7 @@ const app = express();
 
 
 // Thay thế 'YOUR_BOT_TOKEN' bằng token của bot của bạn
-const token = 'MTMxOTQ3NjUwNzQ1MzgxNjg1Mg.GHSbuv.6IWMtCmPNDd9bSz4LVNhYJzUKBvaHvfsHOFhpM';
+const token = '';
 const channelId = '1319475618840182858'; // Thay thế 'YOUR_CHANNEL_ID' bằng ID của kênh
 
 // Tạo client với các intents cần thiết
