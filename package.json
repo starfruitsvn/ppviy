@@ -1,0 +1,20 @@
+{
+  "name": "sepaywebhook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "crypto": "^1.0.1",
+    "discord.js": "^14.16.3",
+    "express": "^4.20.0",
+    "firebase": "^10.13.1",
+    "firebase-admin": "^12.4.0",
+    "puppeteer": "^23.3.0"
+  }
+}
