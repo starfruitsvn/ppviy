@@ -25,7 +25,7 @@ const serviceAccount = {
   universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
   
 };
-
+console.log(serviceAccount);
 var contractList = [];
 
 var DELETE_FEE_RATION = 0.05;
